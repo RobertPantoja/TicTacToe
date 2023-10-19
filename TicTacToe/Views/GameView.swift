@@ -12,17 +12,16 @@ struct GameView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                    }
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("End Game") {
-                                dismiss()
-                            }
-                            .buttonStyle(.bordered)
-                        }
-                    }
-                    .navigationTitle("TicTacToe")
+                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("End Game") {
+                        dismiss()
+                    }.buttonStyle(.bordered)
+                }
+            }
+            .navigationTitle("TicTacToe")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

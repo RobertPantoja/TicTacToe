@@ -8,16 +8,14 @@
 import Foundation
 
 enum GameType {
-    case single, bot, peer, undertermined
+    case single, multi, undertermined
     
     var description: String {
         switch self {
-        case .single:
+        case .multi:
             return "Share your device and play against a friend"
-        case .bot:
+        case .single:
             return "Play against this device"
-        case .peer:
-            return "Play against someone who is runing this game near to you"
         case .undertermined:
             return ""
         }
