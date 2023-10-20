@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
+    @EnvironmentObject var game: GameService
     @State private var gameType: GameType = .undertermined
     @State private var yourName = ""
     @State private var opponentName = ""
@@ -52,6 +53,7 @@ struct StartView: View {
                 .focused($focus).frame(width: 350)
                 
                 Button("Start Game") {
+                    game.setupGame(gameType: gameType, player1Name: yourName, player2name: opponentName)
                     focus = false
                     startGame.toggle()
                 }
@@ -69,5 +71,5 @@ struct StartView: View {
 }
 
 #Preview {
-    StartView()
+    StartView().environmentObject(GameService())
 }
